@@ -1,101 +1,175 @@
-* {
-    box-sizing: border-box;
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(135deg, #74ebd5, #acb6e5);
+    color: #333;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-header {
-    background: #4285f4;
-    color: white;
-    padding: 10px 0;
+h1, h2, h3 {
+    text-align: center;
+    color: #fff;
+    margin: 0;
 }
 
 .container {
     width: 90%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
 }
 
-h1 {
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 28px;
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
     text-align: center;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-}
-
-nav ul li {
+header nav ul li {
+    display: inline-block;
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: white;
+header nav ul li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s ease;
 }
 
+header nav ul li a:hover {
+    color: #ffeb3b;
+}
+
+/* Main Content */
 main {
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 h2 {
-    text-align: center;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* Class Cards */
 .class-card {
-    background: #f4f4f4;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    margin: 10px;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
 }
 
 .class-card h3 {
+    color: #4caf50;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
-.class-card button {
-    background: #4285f4;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
+.class-card p {
+    color: #666;
+    margin-bottom: 15px;
 }
 
-.class-card button:hover {
-    background: #357ae8;
+/* Buttons */
+button, .submit {
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, .submit:hover {
+    background: linear-gradient(135deg, #388e3c, #66bb6a);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active, .submit:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .create-class-button {
     display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background: #34a853;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    width: fit-content;
+    margin: 20px auto 0;
 }
 
-.create-class-button:hover {
-    background: #2c9a43;
-}
-
+/* Footer */
 footer {
-    text-align: center;
+    background: linear-gradient(135deg, #4caf50, #2e7d32);
     padding: 10px 0;
-    background: #f1f1f1;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Transitions and Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main, .class-card {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 24px;
+    }
+
+    header nav ul li {
+        margin: 0 10px;
+    }
+
+    .class-card {
+        padding: 15px;
+    }
+
+    button, .submit {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
 }
