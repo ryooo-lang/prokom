@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Classroom Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .announcement, .assignment, .discussion {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Google Classroom</h1>
+
+    <div class="announcement">
+        <h2>Pengumuman</h2>
+        <p>Selamat datang di kelas! Pastikan untuk memeriksa pengumuman ini secara rutin.</p>
+    </div>
+
+    <div class="assignment">
+        <h2>Tugas</h2>
+        <p>1. Tugas Harian: Bacalah Bab 1 dan buat ringkasan.</p>
+        <p>2. Tugas Mingguan: Siapkan presentasi tentang topik yang telah dibahas.</p>
+        <a href="tugas.html" class="button">Kumpulkan Tugas</a>
+    </div>
+
+    <div class="material">
+        <h2>Materi Pembelajaran</h2>
+        <ul>
+            <li><a href="https://apps.um-surabaya.ac.id/pkm2024/upload/surat_keluar/3628-PKM%20RATNA%202024.pdf">Materi Pelajaran 1 (PDF)</a></li>
+            <li><a href="https://youtu.be/InBfYmE_g_o?si=SbDdOxu1DJm6mUpY">Video Pembelajaran 1</a></li>
+        </ul>
+    </div>
+
+    <div class="discussion">
+        <h2>Forum Diskusi</h2>
+        <p>Diskusikan pertanyaan Anda di sini:</p>
+        <textarea id="discussionInput" rows="4" cols="50" placeholder="Tulis komentar..."></textarea><br>
+        <button onclick="postComment()">Kirim</button>
+        <a href="classroom.html"><button class="submit">back</button></a>
+        <div id="commentsSection"></div>
+    </div>
+</div>
+
+<script>
+    function postComment() {
+        var input = document.getElementById('discussionInput').value;
+        if (input) {
+            var commentsSection = document.getElementById('commentsSection');
+            var newComment = document.createElement('p');
+            newComment.textContent = input;
+            commentsSection.appendChild(newComment);
+            document.getElementById('discussionInput').value = ''; 
+        } else {
+            alert('Silakan masukkan komentar sebelum mengirim.');
+        }
+    }
+</script>
+
+</body>
+</html>
